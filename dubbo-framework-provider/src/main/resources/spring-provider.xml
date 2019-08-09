@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 指定当前当前工厂在monitor中的显示的名字（注：一般和工厂的名字相同）-->
+    <dubbo:application name="dubbo-framework-provider"/>
+
+    <!-- 指定注册中心：这里不使用注册中心-->
+    <dubbo:registry address="N/A"/>
+
+    <!-- 注册服务接口实现类 也就是真正的服务提供者服务-->
+    <bean id="someService" class="com.zk.framework.service.SomeServiceIml"/>
+    <!-- 暴露服务 -->
+    <dubbo:service interface="com.zk.framework.service.api.SomeService" ref="someService"/>
+</beans>
