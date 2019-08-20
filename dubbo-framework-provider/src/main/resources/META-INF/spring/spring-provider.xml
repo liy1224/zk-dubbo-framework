@@ -7,7 +7,8 @@
     <dubbo:application name="dubbo-framework-provider"/>
 
     <!-- 指定注册中心：这里不使用注册中心-->
-    <dubbo:registry address="N/A"/>
+    <!--<dubbo:registry address="N/A"/>-->
+    <dubbo:registry address="zookeeper://192.168.1.107:2181"/>
 
     <!-- 注册服务接口实现类 也就是真正的服务提供者服务-->
     <bean id="someService" class="com.zk.framework.service.SomeServiceIml"/>

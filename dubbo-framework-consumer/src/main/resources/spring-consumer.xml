@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
+    
     <!-- 指定当前当前工厂在monitor中的显示的名字（注：一般和工厂的名字相同）-->
-    <dubbo:application name="dubbo-framework-provider"/>
+    <dubbo:application name="dubbo-framework-provider">
+        <dubbo:parameter key="qos.port" value="33333"/>
+    </dubbo:application>
 
     <!-- 指定注册中心：这里不使用注册中心-->
-    <dubbo:registry address="N/A"/>
+    <!--<dubbo:registry address="N/A"/>-->
+    <dubbo:registry address="zookeeper://192.168.1.107:2181"/>
 
     <!-- 直连式 连接消费者 -->
-    <dubbo:reference id="someService" interface="com.zk.framework.service.api.SomeService"
-        url="dubbo://localhost:20880"/>
+    <dubbo:reference id="someService" check="false" interface="com.zk.framework.service.api.SomeService"/>
 </beans>
