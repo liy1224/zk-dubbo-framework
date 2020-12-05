@@ -12,7 +12,7 @@
         <module>dubbo-api</module>
         <module>dubbo-framework-provider</module>
         <module>dubbo-framework-consumer</module>
-        <module>dubbo-framework-web</module>
+        <!--<module>dubbo-framework-web</module>-->
         <module>dubbo-framework-consumer-web</module>
         <module>dubbo-framework-provider-web</module>
     </modules>
