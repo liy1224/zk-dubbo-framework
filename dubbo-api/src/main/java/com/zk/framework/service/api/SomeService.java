@@ -7,5 +7,5 @@ public interface SomeService {
 
     String hello(String name);
 
-    String getHellowdng(String stline);
+    String getHellowdng(String stline); 
 }
