@@ -1,7 +1,6 @@
 package com.abc.provider;
 
-
-import com.abc.service.SomeService;
+import com.zk.framework.service.api.SomeService;
 
 public class SomeServiceImpl implements SomeService {
     @Override

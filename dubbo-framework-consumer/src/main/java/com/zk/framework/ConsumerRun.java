@@ -1,6 +1,6 @@
-package com.abc.consumer;
+package com.zk.framework;
 
-import com.abc.service.SomeService;
+import com.zk.framework.service.api.SomeService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
