@@ -11,4 +11,9 @@ public class SomeServiceIml implements SomeService {
         System.out.println("执行提供者的hello() " + name);
         return "hello, " + name;
     }
+
+    @Override
+    public String getHellowdng(String stline) {
+        return null;
+    }
 }
